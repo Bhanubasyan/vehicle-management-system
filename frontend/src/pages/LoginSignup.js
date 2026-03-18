@@ -21,7 +21,7 @@ function Auth() {
   const handleLogin = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://vehicle-management-system-5d2c.onrender.com//api//auth//login",
         {
           email: loginEmail,
           password: loginPassword,
@@ -41,7 +41,7 @@ function Auth() {
   const handleSignup = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://vehicle-management-system-5d2c.onrender.com//api//auth//signup",
         {
           name: signupName,
           email: signupEmail,
