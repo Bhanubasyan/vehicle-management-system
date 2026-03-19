@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./db");
 const Vehicle = require("./models/Vehicle");
-
+const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT;
 // middleware
@@ -11,8 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 // DB connect
-connectDB();
-
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.log(err));
 
 // AUTH ROUTES IMPORT
 const authRoutes = require("./routes/auth");
