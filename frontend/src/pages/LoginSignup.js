@@ -21,7 +21,7 @@ function Auth() {
   const handleLogin = async () => {
     try {
       const res = await axios.post(
-        "https://vehicle-management-system-5d2c.onrender.com//api//auth//login",
+        `${process.env.REACT_APP_API}/api/auth/login`,
         {
           email: loginEmail,
           password: loginPassword,
@@ -41,7 +41,7 @@ function Auth() {
   const handleSignup = async () => {
     try {
       await axios.post(
-        "https://vehicle-management-system-5d2c.onrender.com//api//auth//signup",
+        `${process.env.REACT_APP_API}/api/auth/signup`,
         {
           name: signupName,
           email: signupEmail,

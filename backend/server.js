@@ -1,8 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./db");
 const Vehicle = require("./models/Vehicle");
-require("dotenv").config();
+
 const app = express();
 const PORT = process.env.PORT;
 // middleware
