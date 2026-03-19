@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const navigate = useNavigate();
+import { useNavigate } from "react-router-dom";
 import {
 FaMoon,
 FaSun,
@@ -18,6 +18,8 @@ import Navbar from "../components/Navbar";
 import "../styles/Dashboard.css";
 
 function Dashboard() {
+  const navigate = useNavigate(); 
+
 const [vehicles, setVehicles] = useState([]);
 const [makeFilter, setMakeFilter] = useState("");
 const [agingFilter, setAgingFilter] = useState(false);
