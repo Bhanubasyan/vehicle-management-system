@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+const navigate = useNavigate();
 import {
 FaMoon,
 FaSun,
@@ -50,7 +51,7 @@ user = null;
 const handleLogout = () => {
 localStorage.removeItem("token");
 localStorage.removeItem("user");
-window.location.href = "/auth";
+navigate("/auth");
 };
 
 const goToAuth = () => {
@@ -78,11 +79,11 @@ finalVehicles.sort((a, b) => new Date(a.arrivalDate) - new Date(b.arrivalDate));
 return (
 <div className={darkMode ? "layout dark" : "layout"}>
 
-```
+
   <div className="sidebar">
     <FaUserCircle
       className="icon"
-      onClick={() => window.location.href = "/profile"}
+      onClick={() => navigate("/profile")}
     />
 
     <div className="sidebar-bottom">
