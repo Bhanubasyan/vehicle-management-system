@@ -20,7 +20,7 @@ function Profile() {
   }, []);
 
   const fetchVehicles = () => {
-    fetch("http://localhost:5000/vehicles")
+    fetch(`${process.env.REACT_APP_API_URL}/vehicles`)
       .then(res => res.json())
       .then(data => setVehicles(data));
   };
@@ -34,17 +34,17 @@ function Profile() {
   // ✅ ADD / UPDATE
   const handleSubmit = async () => {
     if (editId) {
-      await fetch(`http://localhost:5000/vehicles/${editId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
+      await fetch(`${process.env.REACT_APP_API_URL}/vehicles/${editId}`, {
+  method: "PUT",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
     } else {
-      await fetch("http://localhost:5000/vehicles", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
+      await fetch(`${process.env.REACT_APP_API_URL}/vehicles`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
     }
 
     setShowForm(false);
@@ -55,9 +55,9 @@ function Profile() {
 
   // ✅ DELETE
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/vehicles/${id}`, {
-      method: "DELETE"
-    });
+    await fetch(`${process.env.REACT_APP_API_URL}/vehicles/${id}`, {
+  method: "DELETE",
+});
     fetchVehicles();
   };
 

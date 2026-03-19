@@ -27,7 +27,7 @@ function Dashboard() {
 const [showSearch, setShowSearch] = useState(false);
 const [showFilter, setShowFilter] = useState(false);
   useEffect(() => {
-    fetch("https://vehicle-management-system-5d2c.onrender.com//vehicles")
+    fetch(`${process.env.REACT_APP_API_URL}/vehicles`)
       .then(res => res.json())
       .then(data => setVehicles(data));
   }, []);
