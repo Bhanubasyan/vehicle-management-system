@@ -2,7 +2,23 @@
 
 A full-stack web application designed to help dealership managers monitor vehicle inventory, identify aging stock, and take data-driven actions.
 
+## 📸 UI Preview
 
+### 📊 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### 👤 Profile Section
+![Profile](./screenshots/profile.png)
+
+---
+
+## 📐 System Diagrams
+
+### Architecture Diagram
+![Architecture](./screenshots/architecture.drawio.png)
+
+### Data Flow Diagram
+![Data Flow](./screenshots/data_flow.drawio.png)
 
 ## 📌 Features
 
